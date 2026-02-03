@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const MAX_HP = 10;
-    const TIME_PER_QUESTION = 10.0;
+    const TIME_PER_QUESTION = 20.0;
 
     let currentAnswer;
     let playerHP = MAX_HP;
@@ -131,3 +131,4 @@ document.addEventListener('DOMContentLoaded', () => {
     DOM.answerInput.addEventListener('keypress',(e)=>{if(e.key==='Enter') checkAnswer(false);});
     updateHPDisplay();
 });
+
