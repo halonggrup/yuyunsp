@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Rune Logika: RPG Operasi Matematika</title> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Ujian Rune Logika ➗➕✖️</h1>
+        
+        <div id="status-area">
+            <div class="status-box player-status">
+                <h3>Agen</h3>
+                <p>HP: <span id="player-hp" class="hp-value">100</span></p>
+                <p>Level: <span id="player-level">1</span></p>
+            </div>
+            <div class="status-box enemy-status">
+                <h3>Guardian Penjaga Rune</h3>
+                <p>HP: <span id="enemy-hp" class="hp-value">150</span></p>
+            </div>
+        </div>
+        
+        <hr>
+
+        <div id="battle-scene">
+            <p>🧙‍♂️ Penyihir Logika vs Naga Logika 🐉</p> 
+        </div>
+        <hr>
+
+        <div id="action-panel">
+            <h4>Pilih Rune untuk Memicu Kuis:</h4>
+            
+            <button class="rune-button attack-rune" data-type="arithmetic" data-effect="25" onclick="startRuneChallenge(this)">🔥 Rune Serangan **x** (Perkalian)</button>
+            
+            <button class="rune-button defense-rune" data-type="geometric" data-effect="15" onclick="startRuneChallenge(this)">🛡️ Rune Pertahanan **+** (Penjumlahan)</button>
+            
+            <button class="rune-button heal-rune" data-type="fibonacci" data-effect="20" onclick="startRuneChallenge(this)">💚 Rune Pemulihan **÷** (Pembagian)</button>
+        </div>
+
+        <div id="challenge-area" style="display:none;">
+            <h3>Tantangan Rune: <span id="challenge-title"></span></h3>
+            
+            <p>⏰ Sisa Waktu Jawab: <span id="challenge-timer" style="color:red; font-weight:bold;">8</span> detik</p>
+            
+            <p>Selesaikan operasi ini untuk mengaktifkan Rune:</p> 
+            <p id="soal-matematika" class="sequence-display">A ? B = ?</p>
+            
+            <div class="input-area">
+                <p>Jawaban (Angka):</p>
+                <input type="number" id="jawaban-input" placeholder="Masukkan Hasil" onkeypress="if(event.key === 'Enter') checkSequenceAnswer(false)">
+                <button id="submit-button" onclick="checkSequenceAnswer(false)">Aktifkan</button>
+            </div>
+        </div>
+
+        <div id="log-pesan">
+            <p id="message">Selamat datang, Sequencer! Fokus, hadapi Guardian Penjaga Rune!</p>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>

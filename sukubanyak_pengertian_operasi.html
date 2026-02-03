@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suku Banyak: Pengertian & Operasi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* CSS tambahan khusus untuk halaman ini jika diperlukan */
+        .header-banner {
+            background-color: #2196F3; /* Warna biru Materialize */
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .content-section {
+            padding: 20px 0;
+        }
+        .code-block {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-left: 5px solid #2196F3;
+            margin-bottom: 20px;
+            overflow-x: auto; /* Untuk kode yang panjang */
+            border-radius: 8px;
+        }
+        .example-box {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #e3f2fd; /* Warna biru sangat muda */
+        }
+        .example-box h6 {
+            font-weight: bold;
+            color: #1565c0; /* Biru tua */
+        }
+        .math-formula {
+            font-family: 'Times New Roman', serif; /* Font klasik untuk rumus */
+            font-size: 1.1em;
+            display: block;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .video-responsive {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="light-blue darken-4">
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo center">Suku Banyak</a>
+            <ul class="left">
+                <li><a href="index.html" class="tooltipped" data-position="right" data-tooltip="Kembali ke Beranda"><i class="material-icons">arrow_back</i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header-banner">
+        <div class="container">
+            <h3>Pengertian & Operasi Suku Banyak</h3>
+            <p class="flow-text">Memahami dasar-dasar suku banyak, nilai, dan berbagai operasi aljabar padanya.</p>
+        </div>
+    </div>
+
+    <div class="container content-section">
+
+        <h4>1. Pengertian Suku Banyak (Polinom)</h4>
+        <p>Suku banyak atau polinom adalah suatu bentuk aljabar yang terdiri dari beberapa suku yang memiliki variabel dengan pangkat bilangan bulat non-negatif (asli atau nol). Pangkat tertinggi dari variabel dalam suatu suku banyak disebut **derajat suku banyak**.</p>
+        <p>Bentuk umum suku banyak dengan variabel \(x\) dan berderajat \(n\) adalah:</p>
+        <div class="code-block">
+            <p class="math-formula">\( P(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_2 x^2 + a_1 x + a_0 \)</p>
+        </div>
+        <p>Dengan:</p>
+        <ul>
+            <li>\( a_n, a_{n-1}, \dots, a_1, a_0 \) adalah **koefisien** (bilangan real).</li>
+            <li>\( a_n \neq 0 \) (ini adalah koefisien utama).</li>
+            <li>\( n \) adalah **derajat suku banyak** (bilangan bulat non-negatif).</li>
+            <li>\( x \) adalah **variabel**.</li>
+            <li>\( a_0 \) adalah **suku konstanta** (suku tanpa variabel \(x\)).</li>
+        </ul>
+        <div class="example-box">
+            <h6>Contoh 1.1: Identifikasi Suku Banyak</h6>
+            <p>Perhatikan suku banyak \( P(x) = 3x^4 - 5x^2 + 2x + 7 \):</p>
+            <ul>
+                <li>Derajat: 4</li>
+                <li>Variabel: \( x \)</li>
+                <li>Koefisien \( x^4 \): 3</li>
+                <li>Koefisien \( x^3 \): 0 (karena tidak tertulis)</li>
+                <li>Koefisien \( x^2 \): -5</li>
+                <li>Koefisien \( x \): 2</li>
+                <li>Konstanta: 7</li>
+            </ul>
+            <p><strong>Bukan Suku Banyak:</strong> \( Q(x) = x^2 + \frac{1}{x} - 3 = x^2 + x^{-1} - 3 \) (karena ada pangkat negatif).</p>
+        </div>
+
+        <div class="divider"></div>
+        <br>
+
+        <h4>2. Nilai Suku Banyak</h4>
+        <p>Nilai suku banyak \( P(x) \) untuk \( x = k \) adalah \( P(k) \), yaitu nilai yang diperoleh dengan mengganti variabel \( x \) dengan bilangan \( k \).</p>
+
+        <h5>A. Metode Substitusi</h5>
+        <p>Mengganti langsung nilai \( x \) ke dalam bentuk suku banyak.</p>
+        <div class="example-box">
+            <h6>Contoh 2.1: Menentukan Nilai Suku Banyak dengan Substitusi</h6>
+            <p>Tentukan nilai dari \( P(x) = 2x^3 - 3x^2 + x - 5 \) untuk \( x = 2 \).</p>
+            <p>\( P(2) = 2(2)^3 - 3(2)^2 + (2) - 5 \)</p>
+            <p>\( P(2) = 2(8) - 3(4) + 2 - 5 \)</p>
+            <p>\( P(2) = 16 - 12 + 2 - 5 \)</p>
+            <p>\( P(2) = 4 + 2 - 5 \)</p>
+            <p>\( P(2) = 6 - 5 \)</p>
+            <p>\( P(2) = 1 \)</p>
+        </div>
+
+        <h5>B. Metode Horner (Skema)</h5>
+        <p>Metode ini lebih sistematis dan efisien, terutama untuk suku banyak berderajat tinggi. Langkah-langkahnya melibatkan perkalian dan penjumlahan secara berurutan.</p>
+        <div class="example-box">
+            <h6>Contoh 2.2: Menentukan Nilai Suku Banyak dengan Horner</h6>
+            <p>Tentukan nilai dari \( P(x) = 2x^3 - 3x^2 + x - 5 \) untuk \( x = 2 \).</p>
+            <p>Koefisien suku banyak adalah 2, -3, 1, -5.</p>
+            <div class="code-block">
+                <pre>
+    2 | 2  -3   1  -5
+      |    4   2   6
+      ----------------
+        2   1   3   1
+                </pre>
+            </div>
+            <p>Nilai terakhir pada baris bawah adalah nilai suku banyak, yaitu \( P(2) = 1 \).</p>
+        </div>
+
+        <div class="divider"></div>
+        <br>
+
+        <h4>3. Operasi Aljabar pada Suku Banyak</h4>
+
+        <h5>A. Penjumlahan dan Pengurangan Suku Banyak</h5>
+        <p>Penjumlahan dan pengurangan suku banyak dilakukan dengan menjumlahkan atau mengurangi koefisien dari suku-suku yang **sejenis** (memiliki variabel dan pangkat yang sama).</p>
+        <div class="example-box">
+            <h6>Contoh 3.1: Penjumlahan Suku Banyak</h6>
+            <p>Jika \( P(x) = 3x^2 + 2x - 1 \) dan \( Q(x) = x^2 - 4x + 5 \),</p>
+            <p>\( P(x) + Q(x) = (3x^2 + 2x - 1) + (x^2 - 4x + 5) \)</p>
+            <p>\( = (3x^2 + x^2) + (2x - 4x) + (-1 + 5) \)</p>
+            <p>\( = 4x^2 - 2x + 4 \)</p>
+        </div>
+        <div class="example-box">
+            <h6>Contoh 3.2: Pengurangan Suku Banyak</h6>
+            <p>Jika \( P(x) = 3x^2 + 2x - 1 \) dan \( Q(x) = x^2 - 4x + 5 \),</p>
+            <p>\( P(x) - Q(x) = (3x^2 + 2x - 1) - (x^2 - 4x + 5) \)</p>
+            <p>\( = 3x^2 + 2x - 1 - x^2 + 4x - 5 \)</p>
+            <p>\( = (3x^2 - x^2) + (2x + 4x) + (-1 - 5) \)</p>
+            <p>\( = 2x^2 + 6x - 6 \)</p>
+        </div>
+
+        <h5>B. Perkalian Suku Banyak</h5>
+        <p>Perkalian suku banyak dilakukan dengan mengalikan setiap suku dari suku banyak pertama dengan setiap suku dari suku banyak kedua (prinsip distributif). Derajat hasil perkalian adalah jumlah derajat kedua suku banyak.</p>
+        <div class="example-box">
+            <h6>Contoh 3.3: Perkalian Suku Banyak</h6>
+            <p>Jika \( P(x) = x + 2 \) dan \( Q(x) = x^2 + 3x - 1 \),</p>
+            <p>\( P(x) \cdot Q(x) = (x + 2)(x^2 + 3x - 1) \)</p>
+            <p>\( = x(x^2 + 3x - 1) + 2(x^2 + 3x - 1) \)</p>
+            <p>\( = (x^3 + 3x^2 - x) + (2x^2 + 6x - 2) \)</p>
+            <p>\( = x^3 + (3x^2 + 2x^2) + (-x + 6x) - 2 \)</p>
+            <p>\( = x^3 + 5x^2 + 5x - 2 \)</p>
+            <p>Derajat \( P(x) = 1 \), Derajat \( Q(x) = 2 \). Derajat \( P(x) \cdot Q(x) = 1 + 2 = 3 \).</p>
+        </div>
+
+        <h5>C. Pembagian Suku Banyak</h5>
+        <p>Pembagian suku banyak menghasilkan hasil bagi dan sisa. Jika sisa pembagian adalah nol, maka pembagi adalah faktor dari suku banyak. Bentuk umum pembagian adalah:</p>
+        <div class="code-block">
+            <p class="math-formula">\( P(x) = Q(x) \cdot H(x) + S(x) \)</p>
+        </div>
+        <p>Dengan:</p>
+        <ul>
+            <li>\( P(x) \): Suku banyak yang dibagi</li>
+            <li>\( Q(x) \): Pembagi</li>
+            <li>\( H(x) \): Hasil bagi</li>
+            <li>\( S(x) \): Sisa pembagian (derajat \( S(x) \) < derajat \( Q(x) \))</li>
+        </ul>
+
+        <h6>C.1. Metode Pembagian Bersusun Panjang</h6>
+        <p>Mirip dengan pembagian bilangan biasa. Ini adalah metode yang paling umum dan dapat digunakan untuk pembagi sembarang.</p>
+        <div class="example-box">
+            <h6>Contoh 3.4: Pembagian Bersusun Panjang</h6>
+            <p>Bagi \( (x^3 - 7x^2 + 4x + 1) \) oleh \( (x - 2) \).</p>
+            <div class="code-block">
+                <pre>
+        x²  - 5x  - 6
+       _________________
+x - 2 | x³ - 7x² + 4x + 1
+        -(x³ - 2x²)      (x² * (x-2))
+        ___________
+             -5x² + 4x
+            -(-5x² + 10x)  (-5x * (x-2))
+            ____________
+                  -6x + 1
+                 -(-6x + 12)  (-6 * (x-2))
+                 ___________
+                       -11   (Sisa)
+                </pre>
+            </div>
+            <p>Hasil bagi: \( H(x) = x^2 - 5x - 6 \)</p>
+            <p>Sisa: \( S(x) = -11 \)</p>
+        </div>
+
+        <h6>C.2. Metode Horner (Pembagian Sintetik)</h6>
+        <p>Metode ini sangat efisien untuk pembagian suku banyak oleh pembagi berbentuk \( (x - k) \) atau \( (ax - b) \).</p>
+        <p><strong>Untuk pembagi \( (x - k) \):</strong></p>
+        <div class="example-box">
+            <h6>Contoh 3.5: Metode Horner dengan \( (x - k) \)</h6>
+            <p>Bagi \( (x^3 - 2x^2 + 5x - 4) \) oleh \( (x - 1) \).</p>
+            <p>Ambil koefisien suku banyak: 1, -2, 5, -4. Pembagi \( x - 1 \), jadi \( k = 1 \).</p>
+            <div class="code-block">
+                <pre>
+    1 | 1  -2   5  -4
+      |    1  -1   4
+      ----------------
+        1  -1   4   0  <span style="font-weight: bold;">(Sisa)</span>
+                </pre>
+            </div>
+            <p>Koefisien hasil bagi: 1, -1, 4. Jadi Hasil bagi \( H(x) = x^2 - x + 4 \).</p>
+            <p>Sisa pembagian: \( S(x) = 0 \).</p>
+        </div>
+
+        <p><strong>Untuk pembagi \( (ax - b) \):</strong></p>
+        <p>Jika pembagi berbentuk \( (ax - b) \), maka nilai \( k = \frac{b}{a} \). Hasil bagi yang diperoleh dari skema Horner harus dibagi lagi dengan \( a \).</p>
+        <div class="example-box">
+            <h6>Contoh 3.6: Metode Horner dengan \( (ax - b) \)</h6>
+            <p>Bagi \( (2x^3 - 7x^2 + 11x - 4) \) oleh \( (2x - 1) \).</p>
+            <p>Ambil koefisien: 2, -7, 11, -4. Pembagi \( 2x - 1 \), jadi \( k = \frac{1}{2} \).</p>
+            <div class="code-block">
+                <pre>
+ 1/2 | 2  -7   11  -4
+     |    1  -3    4
+     -----------------
+       2  -6    8    0  <span style="font-weight: bold;">(Sisa)</span>
+                </pre>
+            </div>
+            <p>Koefisien hasil bagi dari skema: 2, -6, 8.</p>
+            <p>Karena pembagi adalah \( (2x - 1) \), bagi koefisien hasil bagi dengan \( a = 2 \):</p>
+            <p>\( \frac{2}{2} = 1, \frac{-6}{2} = -3, \frac{8}{2} = 4 \)</p>
+            <p>Jadi Hasil bagi \( H(x) = x^2 - 3x + 4 \).</p>
+            <p>Sisa pembagian: \( S(x) = 0 \).</p>
+        </div>
+
+        <div class="center-align" style="margin-top: 40px;">
+            <a href="index.html#sukubanyak" class="waves-effect waves-light btn light-blue darken-3"><i class="material-icons left">chevron_left</i>Kembali ke Suku Banyak</a>
+        </div>
+
+    </div>
+
+    <footer class="page-footer light-blue darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Tentang Aplikasi</h5>
+                    <p class="grey-text text-lighten-4">Aplikasi ini dirancang untuk membantu siswa kelas XI dalam memahami konsep Suku Banyak dan Matriks.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Tautan Cepat</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html#home">Beranda</a></li>
+                        <li><a class="grey-text text-lighten-3" href="index.html#sukubanyak">Suku Banyak</a></li>
+                        <li><a class="grey-text text-lighten-3" href="index.html#matriks">Matriks</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+            © 2023 Pembelajaran Matematika XI
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inisialisasi Tooltip
+            var elemsTooltip = document.querySelectorAll('.tooltipped');
+            M.Tooltip.init(elemsTooltip);
+        });
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>

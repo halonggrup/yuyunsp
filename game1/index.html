@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duel Penyihir Matematika! 🧙‍♂️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Duel Penyihir Matematika! ✨</h1>
+        
+        <div class="header-status">
+            <p>Waktu Sisa: <span id="time-left">10.0</span>s</p>
+        </div>
+        
+        <div class="stats-bar">
+            <div class="health-container">
+                <label>HP Kita:</label>
+                <progress id="player-hp-bar" value="10" max="10"></progress>
+                <span id="player-hp-text">10/10</span>
+            </div>
+            <div class="health-container enemy-hp">
+                <label>HP Lawan:</label>
+                <progress id="enemy-hp-bar" value="10" max="10"></progress>
+                <span id="enemy-hp-text">10/10</span>
+            </div>
+        </div>
+        
+        <hr>
+
+        <div class="scene">
+            <div id="player-wizard"></div>
+            <div id="enemy-wizard"></div>
+            <div id="fireball"></div> 
+        </div>
+        
+        <div id="question-area">
+            </div>
+        
+        <input type="number" id="answer-input" placeholder="Jawaban Mantra..." autofocus>
+        <button id="submit-btn">Kirim Mantra!</button>
+        
+        <p id="message" class="hidden"></p>
+        
+        <button id="start-btn">Mulai Duel!</button>
+        
+    
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

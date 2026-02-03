@@ -1,0 +1,140 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9; 
+    color: #333;
+    overflow: hidden;
+}
+
+.game-container {
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+}
+
+h1 { color: #4a4a86; margin-bottom: 15px; }
+
+/* Status & HP */
+.header-status { margin-bottom: 10px; font-size: 1.2em; color: #ff4500; font-weight: bold; }
+.stats-bar { display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 0.9em; }
+progress { width: 120px; height: 15px; accent-color: #3cb371; }
+.enemy-hp progress { accent-color: #ff6347; }
+
+/* Soal & Input */
+#question-area {
+    font-family: 'Times New Roman', serif;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #007bff;
+    white-space: pre-line; /* \n muncul sebagai line break */
+    text-align: center;
+    line-height: 1.2; /* enter agak turun ke bawah */
+}
+#answer-input { padding: 12px; font-size: 1.2em; width: 80%; margin-bottom: 15px; border-radius: 8px; text-align: center; border: 2px solid #ccc; }
+#submit-btn, #start-btn { background-color: #007bff; color: white; border: none; padding: 12px; font-size: 1.1em; border-radius: 8px; cursor: pointer; width: 80%; margin-top: 10px; transition: 0.3s; }
+#submit-btn:hover, #start-btn:hover { background-color: #0056b3; }
+
+/* Scene */
+.scene {
+    height: 200px; /* lebih tinggi supaya naga terlihat */
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    background: url('bg.jpg') no-repeat center center; /* ganti BG */
+    background-size: cover;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Wizard & Naga */
+#player-wizard {
+    left: 30px;
+    width: 90px;
+    height: 120px;
+    bottom: 0;
+    background-image: url('wizard.png');
+    transform-origin: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    position: absolute;
+    transition: transform 0.3s ease-out, filter 0.2s;
+    z-index: 2;
+    animation: idle-float 2s ease-in-out infinite alternate;
+}
+
+#enemy-wizard {
+    right: 30px;
+    width: 120px;
+    height: 120px; /* tinggi naga lebih besar */
+    bottom: 60px;
+    background-image: url('naga.png');
+    transform-origin: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    position: absolute;
+    z-index: 2;
+    animation: fly-dragon 2s ease-in-out infinite alternate;
+}
+
+@keyframes idle-float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+@keyframes fly-dragon {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* Fireball */
+#fireball {
+    position:absolute;
+    bottom:55px;
+    left:80px;
+    width:40px;
+    height:40px;
+    background-image:url('fireball.png');
+    background-size:contain;
+    z-index:3;
+    opacity:0;
+    transition:opacity 0.2s;
+    transform:translateX(0);
+}
+
+/* Fireball Animations */
+@keyframes fireball-player-stage1 { 0%{transform:translateX(0) scale(0.8);opacity:0;} 50%{transform:translateX(75px) scale(1.2);opacity:1;} 100%{transform:translateX(150px) scale(1.2);opacity:1;} }
+@keyframes fireball-player-stage2 { 0%{transform:translateX(150px) scale(1.2);opacity:1;} 100%{transform:translateX(300px) scale(0.8);opacity:0;} }
+@keyframes fireball-enemy-stage1 { 0%{transform:translateX(300px) scale(0.8);opacity:0;} 50%{transform:translateX(225px) scale(1.2);opacity:1;} 100%{transform:translateX(150px) scale(1.2);opacity:1;} }
+@keyframes fireball-enemy-stage2 { 0%{transform:translateX(150px) scale(1.2);opacity:1;} 100%{transform:translateX(0px) scale(0.8);opacity:0;} }
+.fireball-player-start { animation: fireball-player-stage1 0.4s ease-out forwards; opacity:1 !important; }
+.fireball-player-finish { animation: fireball-player-stage2 0.4s ease-in forwards; }
+.fireball-enemy-start { animation: fireball-enemy-stage1 0.4s ease-out forwards; opacity:1 !important; }
+.fireball-enemy-finish { animation: fireball-enemy-stage2 0.4s ease-in forwards; }
+
+/* Shake & Attack */
+.shake { animation: shake 0.5s ease-in-out; filter: brightness(1.5); }
+@keyframes shake { 0%{transform:translateX(0);}25%{transform:translateX(-10px);}50%{transform:translateX(10px);}75%{transform:translateX(-10px);}100%{transform:translateX(0);} }
+.attack { animation: attack-move 0.3s ease-in-out; filter:brightness(1.2) drop-shadow(0 0 5px yellow);}
+@keyframes attack-move { 0%{transform:translate(0,0);}50%{transform:translate(10px,-10px) scale(1.1);}100%{transform:translate(0,0);} }
+
+/* Message */
+#message { font-size:1.1em; margin:15px 0; padding:10px; border-radius:5px; visibility:hidden; }
+.correct { background-color:#d4edda; color:#155724; visibility:visible !important; }
+.incorrect { background-color:#f8d7da; color:#721c24; visibility:visible !important; }
+.hidden { display:none !important; }
+
+
+

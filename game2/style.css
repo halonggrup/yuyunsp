@@ -1,0 +1,139 @@
+body {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+
+#game-container {
+    width: 800px;
+    max-width: 100%;
+    background-color: #2b2b2b;
+    border: 3px solid #6a0dad; /* Warna Ungu Fantasi */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(106, 13, 173, 0.5);
+}
+
+h1 {
+    text-align: center;
+    color: #ffcc00; /* Warna Emas */
+}
+
+/* Status Area */
+#status-area {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+
+.status-box {
+    background-color: #3a3a3a;
+    padding: 15px;
+    border-radius: 5px;
+    width: 45%;
+}
+
+.hp-value {
+    color: #ff4500; /* Orange Red */
+    font-weight: bold;
+}
+
+/* Action Panel & Buttons */
+#action-panel {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.rune-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.attack-rune { background-color: #dc3545; color: white; }
+.defense-rune { background-color: #007bff; color: white; }
+.heal-rune { background-color: #28a745; color: white; }
+
+.rune-button:hover { opacity: 0.8; }
+
+/* Challenge Area */
+#challenge-area {
+    background-color: #1a1a1a;
+    border: 2px solid #6a0dad;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.sequence-display {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #ffeb3b; /* Kuning Cerah */
+}
+
+#jawaban-input {
+    padding: 10px;
+    width: 70%;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: white;
+}
+
+#submit-button {
+    padding: 10px 15px;
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Log Pesan */
+#log-pesan {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+#message {
+    font-style: italic;
+    color: #bbb;
+}
+/* --- BATTLE SCENE (Penyihir vs Naga) --- */
+#battle-scene {
+    text-align: center;
+    padding: 15px 0;
+    margin: 10px 0;
+    background-color: #e8e8e8; /* Warna latar belakang ringan */
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #444;
+}
+
+#battle-scene p {
+    margin: 0;
+}
+
+/* Jika Anda menggunakan tag <img> di #battle-scene, gunakan ini: 
+#battle-scene img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+*/

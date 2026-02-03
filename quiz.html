@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis MATLOR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        .quiz-header {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .quiz-card {
+            max-width: 500px;
+            margin: 30px auto;
+        }
+        .quiz-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .btn-start {
+            display: block;
+            margin: 20px auto 20px auto;
+            font-size: 16px;
+            padding: 12px 25px;
+        }
+        .card-content p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        @media (max-width: 600px) {
+            .quiz-card {
+                margin: 20px;
+            }
+            .btn-start {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="quiz-header">
+        <h3>Kuis Interaktif MATLOR</h3>
+        <p>Uji pemahamanmu tentang Matriks!</p>
+    </header>
+
+    <main>
+        <div class="card quiz-card z-depth-3">
+            <div class="card-image">
+                <img src="quis.JPG" alt="Gambar Kuis">
+            </div>
+            <div class="card-content center-align">
+                <p>Klik tombol di bawah untuk mengirim jawaban</p>
+            </div>
+            <div class="card-action center-align">
+                <a href="https://api.whatsapp.com/send?phone=6287733449009&text=Saya%20ingin%20mengirimkan%20jawaban%20dari%20Quis%20Matriks" class="waves-effect waves-light btn green darken-1 btn-start">Kirim Jawaban</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer light-blue darken-4" style="margin-top: 50px;">
+        <div class="container center-align">
+            © 2026 MATLOR - Pembelajaran Matematika XI
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

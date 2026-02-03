@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vektor Dasar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .header-banner {
+            background-color: #2196F3;
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .content-section { padding: 20px 0; }
+        .code-block {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-left: 5px solid #2196F3;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            border-radius: 8px;
+        }
+        .example-box {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #e3f2fd;
+        }
+        .example-box h6 { font-weight: bold; color: #1565c0; }
+        .math-formula { font-family: 'Times New Roman', serif; font-size: 1.1em; display: block; margin: 15px 0; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <nav class="light-blue darken-4">
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo center">Vektor</a>
+            <ul class="left">
+                <li><a href="index.html" class="tooltipped" data-position="right" data-tooltip="Kembali ke Beranda"><i class="material-icons">arrow_back</i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header-banner">
+        <div class="container">
+            <h3>Vektor Dasar</h3>
+            <p class="flow-text">Materi pengenalan vektor: pengertian, notasi, besar & arah, serta contoh penerapannya.</p>
+        </div>
+    </div>
+
+    <div class="container content-section">
+
+        <h4>1. Pengertian Vektor</h4>
+        <p>Vektor adalah besaran yang memiliki <strong>besar</strong> dan <strong>arah</strong>. Contoh: kecepatan, gaya, perpindahan. Vektor dilambangkan dengan huruf tebal atau panah di atas huruf, misal <strong>𝐯</strong> atau <strong>v⃗</strong>.</p>
+
+        <div class="example-box">
+            <h6>Contoh 1.1: Vektor di Kehidupan Sehari-hari</h6>
+            <p>Mobil bergerak dengan kecepatan 60 km/jam ke arah timur. Besar = 60 km/jam, arah = timur → ini adalah vektor.</p>
+        </div>
+
+        <h4>2. Notasi dan Representasi</h4>
+        <p>Vektor dapat ditulis:</p>
+        <ul>
+            <li><strong>Bentuk Panah:</strong> Panjang panah = besar vektor, arah panah = arah vektor.</li>
+            <li><strong>Bentuk Komponen:</strong> <strong>𝐯 = xi + yj</strong></li>
+            <li><strong>Bentuk Matriks Kolom:</strong> 𝐯 = [x y]^T</li>
+        </ul>
+
+        <div class="example-box">
+            <h6>Contoh 2.1: Representasi Vektor</h6>
+            <p>Vektor 𝐯 = 3i + 4j.</p>
+            <ul>
+                <li>Bentuk panah → Panjang = 5, arah = tan⁻¹(4/3)</li>
+                <li>Bentuk komponen → 𝐯 = 3i + 4j</li>
+                <li>Bentuk matriks → 𝐯 = [3 4]^T</li>
+            </ul>
+            <p class="math-formula">|𝐯| = √(3² + 4²) = 5</p>
+            <p class="math-formula">θ = tan⁻¹(4/3) ≈ 53,13°</p>
+        </div>
+
+        <h4>3. Vektor Satu dan Dua Dimensi</h4>
+        <p>
+            <strong>Satu dimensi:</strong> Bergerak sepanjang satu sumbu. Contoh: 𝐯 = 5i<br>
+            <strong>Dua dimensi:</strong> Bergerak pada bidang XY. Contoh: 𝐯 = 3i + 4j
+        </p>
+
+        <div class="example-box">
+            <h6>Contoh 3.1: Perhitungan Magnitude dan Arah</h6>
+            <p>Vektor 𝐯 = -2i + 2j</p>
+            <p>Besarnya: |𝐯| = √((-2)² + 2²) = √(4 + 4) = √8 ≈ 2,83</p>
+            <p>Arah: θ = tan⁻¹(2 / -2) = tan⁻¹(-1) ≈ -45° (arah barat laut)</p>
+        </div>
+
+        <h4>4. Operasi Dasar Vektor</h4>
+        <h5>A. Penjumlahan Vektor</h5>
+        <div class="example-box">
+            <h6>Contoh 4.1</h6>
+            <p>𝐯₁ = 2i + 3j, 𝐯₂ = -i + 4j</p>
+            <p>𝐯₁ + 𝐯₂ = (2 - 1)i + (3 + 4)j = i + 7j</p>
+        </div>
+
+        <h5>B. Pengurangan Vektor</h5>
+        <div class="example-box">
+            <h6>Contoh 4.2</h6>
+            <p>𝐯₁ - 𝐯₂ = (2 - (-1))i + (3 - 4)j = 3i - j</p>
+        </div>
+
+        <h5>C. Perkalian dengan Skalar</h5>
+        <div class="example-box">
+            <h6>Contoh 4.3</h6>
+            <p>Jika k = 3, 𝐯 = 2i + j</p>
+            <p>k𝐯 = 3(2i + j) = 6i + 3j</p>
+        </div>
+
+        <div class="center-align" style="margin-top: 40px;">
+            <a href="vektor_operasi.html" class="waves-effect waves-light btn light-blue darken-3"><i class="material-icons left">arrow_forward</i>Selanjutnya: Operasi Vektor</a>
+        </div>
+
+    </div>
+
+    <footer class="page-footer light-blue darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Tentang MATLOR</h5>
+                    <p class="grey-text text-lighten-4">MATLOR membantu siswa kelas XI memahami konsep Vektor, Suku Banyak, dan Matriks secara interaktif.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+            © 2026 MATLOR - Pembelajaran Matematika XI
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

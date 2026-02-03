@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATLOR - Pengertian & Jenis Matriks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom styles for this page (optional, can be moved to style.css) */
+        .content-section {
+            padding: 40px 0;
+        }
+        .content-section h4 {
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #263238; /* Dark grey */
+        }
+        .content-section h5 {
+            font-weight: 500;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #37474F; /* Slightly lighter dark grey */
+            border-bottom: 1px solid #CFD8DC;
+            padding-bottom: 5px;
+        }
+        .content-section p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #424242;
+        }
+        .content-section ul li {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 8px;
+            line-height: 1.6;
+            color: #424242;
+        }
+        .code-block {
+            background-color: #ECEFF1; /* Light grey blue */
+            padding: 15px;
+            border-left: 4px solid #4CAF50; /* Green accent */
+            margin: 20px 0;
+            overflow-x: auto; /* For long matrix examples */
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        .matrix-example {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 1.2em;
+            margin: 0 10px;
+        }
+        .matrix-brackets {
+            font-size: 2em; /* Larger brackets */
+            vertical-align: middle;
+        }
+        .matrix-content {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .matrix-row span {
+            display: inline-block;
+            width: 30px; /* Adjust as needed */
+            text-align: center;
+        }
+        .matrix-content p {
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+    </header>
+
+    <main class="container">
+        <div class="content-section">
+            <h3 class="center-align section-title">Pengertian & Jenis Matriks</h3>
+            <p class="flow-text center-align grey-text text-darken-1">Memahami dasar-dasar matriks: definisi, ordo, elemen, dan klasifikasinya.</p>
+            
+            <div class="divider"></div>
+
+            <h4>1. Definisi Matriks</h4>
+            <p>Dalam matematika, **matriks** adalah susunan bilangan, simbol, atau ekspresi yang disusun dalam baris (horizontal) dan kolom (vertikal) sehingga membentuk suatu jajaran persegi atau persegi panjang. Setiap bilangan atau simbol dalam susunan tersebut disebut sebagai **elemen** atau anggota matriks.</p>
+            <p>Matriks biasanya dinotasikan dengan huruf kapital (misalnya A, B, C) dan elemen-elemennya diletakkan di antara tanda kurung siku `[ ]` atau tanda kurung biasa `( )`. Matriks digunakan untuk merepresentasikan dan memecahkan berbagai masalah dalam bidang matematika, fisika, teknik, ekonomi, ilmu komputer, dan lainnya.</p>
+            <div class="code-block">
+                Contoh Matriks A:<br>
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>a</span><span>b</span></div>
+                        <div class="matrix-row"><span>c</span><span>d</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                atau
+                <div class="matrix-example">
+                    <span class="matrix-brackets">(</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1</span><span>2</span><span>3</span></div>
+                        <div class="matrix-row"><span>4</span><span>5</span><span>6</span></div>
+                        <div class="matrix-row"><span>7</span><span>8</span><span>9</span></div>
+                    </div>
+                    <span class="matrix-brackets">)</span>
+                </div>
+            </div>
+
+            <h4>2. Ordo (Ukuran) Matriks</h4>
+            <p>Ordo suatu matriks mendefinisikan ukurannya, yaitu banyaknya baris dan banyaknya kolom yang dimiliki matriks tersebut. Jika suatu matriks memiliki `m` baris dan `n` kolom, maka ordo matriks tersebut adalah `m x n` (dibaca "m kali n").</p>
+            <p>Penulisan ordo matriks sangat penting karena memengaruhi operasi yang dapat dilakukan pada matriks tersebut (misalnya penjumlahan, pengurangan, atau perkalian).</p>
+            <ul>
+                <li>Jumlah baris selalu disebutkan terlebih dahulu, diikuti oleh jumlah kolom.</li>
+                <li>Elemen suatu matriks biasanya dinotasikan dengan huruf kecil yang diikuti oleh indeks baris dan kolom. Misalnya, `a_ij` menunjukkan elemen pada baris ke-`i` dan kolom ke-`j` dari matriks A.</li>
+            </ul>
+            <div class="code-block">
+                Contoh:<br>
+                Matriks P = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1</span><span>2</span><span>3</span></div>
+                        <div class="matrix-row"><span>4</span><span>5</span><span>6</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                memiliki 2 baris dan 3 kolom. Jadi, ordo matriks P adalah **2 x 3**. <br>
+                Elemen p_12 (baris 1, kolom 2) adalah 2. <br>
+                Elemen p_23 (baris 2, kolom 3) adalah 6.
+            </div>
+
+            <h4>3. Elemen Matriks</h4>
+            <p>Setiap bilangan atau entri di dalam matriks disebut elemen. Posisi setiap elemen ditentukan oleh indeks baris dan indeks kolomnya. Konvensi umumnya adalah menggunakan huruf kecil yang sesuai dengan nama matriks, diikuti dengan dua indeks subskrip.</p>
+            <ul>
+                <li>`a_ij` berarti elemen pada baris ke-`i` dan kolom ke-`j`.</li>
+                <li>Indeks baris `i` selalu ditulis terlebih dahulu, kemudian indeks kolom `j`.</li>
+            </ul>
+            <div class="code-block">
+                Matriks B dengan ordo 3x3:<br>
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>b_11</span><span>b_12</span><span>b_13</span></div>
+                        <div class="matrix-row"><span>b_21</span><span>b_22</span><span>b_23</span></div>
+                        <div class="matrix-row"><span>b_31</span><span>b_32</span><span>b_33</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                Di sini, b_11 adalah elemen di baris pertama, kolom pertama; b_23 adalah elemen di baris kedua, kolom ketiga, dst.
+            </div>
+
+            <h4>4. Berbagai Jenis Matriks</h4>
+            <p>Matriks dapat diklasifikasikan berdasarkan bentuk, ukuran, dan karakteristik elemennya. Berikut adalah beberapa jenis matriks yang umum:</p>
+
+            <h5>4.1. Matriks Baris</h5>
+            <p>Matriks yang hanya memiliki satu baris. Ordonya adalah 1 x n.</p>
+            <div class="code-block">
+                Contoh: M = [ 5  -1  7 ] (Ordo 1 x 3)
+            </div>
+
+            <h5>4.2. Matriks Kolom</h5>
+            <p>Matriks yang hanya memiliki satu kolom. Ordonya adalah m x 1.</p>
+            <div class="code-block">
+                Contoh: N = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>2</span></div>
+                        <div class="matrix-row"><span>0</span></div>
+                        <div class="matrix-row"><span>-3</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                (Ordo 3 x 1)
+            </div>
+
+            <h5>4.3. Matriks Persegi (Square Matrix)</h5>
+            <p>Matriks yang memiliki jumlah baris sama dengan jumlah kolom (m = n). Ordonya sering disebut sebagai "ordo n".</p>
+            <div class="code-block">
+                Contoh: Q = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1</span><span>2</span></div>
+                        <div class="matrix-row"><span>3</span><span>4</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                (Ordo 2)
+            </div>
+
+            <h5>4.4. Matriks Nol (Zero Matrix)</h5>
+            <p>Matriks di mana semua elemennya adalah nol. Dinotasikan dengan huruf kapital O.</p>
+            <div class="code-block">
+                Contoh: O = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>0</span><span>0</span><span>0</span></div>
+                        <div class="matrix-row"><span>0</span><span>0</span><span>0</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                (Ordo 2 x 3)
+            </div>
+
+            <h5>4.5. Matriks Identitas (Identity Matrix)</h5>
+            <p>Matriks persegi di mana semua elemen pada **diagonal utamanya** adalah 1 dan semua elemen lainnya adalah 0. Diagonal utama adalah elemen `a_ii` (dimana indeks baris = indeks kolom). Dinotasikan dengan huruf kapital I.</p>
+            <div class="code-block">
+                Contoh: I_2 = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1</span><span>0</span></div>
+                        <div class="matrix-row"><span>0</span><span>1</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                (Ordo 2)
+            </div>
+            <div class="code-block">
+                Contoh: I_3 = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1</span><span>0</span><span>0</span></div>
+                        <div class="matrix-row"><span>0</span><span>1</span><span>0</span></div>
+                        <div class="matrix-row"><span>0</span><span>0</span><span>1</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                (Ordo 3)
+            </div>
+
+            <h5>4.6. Matriks Diagonal</h5>
+            <p>Matriks persegi di mana semua elemen di luar diagonal utamanya adalah nol. Elemen pada diagonal utamanya bisa berupa bilangan berapa pun (termasuk nol).</p>
+            <div class="code-block">
+                Contoh: D = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>5</span><span>0</span><span>0</span></div>
+                        <div class="matrix-row"><span>0</span><span>-2</span><span>0</span></div>
+                        <div class="matrix-row"><span>0</span><span>0</span><span>1</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+            </div>
+
+            <h5>4.7. Matriks Skalar</h5>
+            <p>Matriks diagonal di mana semua elemen pada diagonal utamanya adalah sama (dan bukan nol).</p>
+            <div class="code-block">
+                Contoh: S = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>3</span><span>0</span><span>0</span></div>
+                        <div class="matrix-row"><span>0</span><span>3</span><span>0</span></div>
+                        <div class="matrix-row"><span>0</span><span>0</span><span>3</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+            </div>
+
+            <h5>4.8. Matriks Segitiga Atas (Upper Triangular Matrix)</h5>
+            <p>Matriks persegi di mana semua elemen **di bawah** diagonal utamanya adalah nol. Yaitu, $a_{ij} = 0$ jika $i > j$.</p>
+            <div class="code-block">
+                Contoh: U = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1</span><span>2</span><span>3</span></div>
+                        <div class="matrix-row"><span>0</span><span>4</span><span>5</span></div>
+                        <div class="matrix-row"><span>0</span><span>0</span><span>6</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+            </div>
+
+            <h5>4.9. Matriks Segitiga Bawah (Lower Triangular Matrix)</h5>
+            <p>Matriks persegi di mana semua elemen **di atas** diagonal utamanya adalah nol. Yaitu, $a_{ij} = 0$ jika $i < j$.</p>
+            <div class="code-block">
+                Contoh: L = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1</span><span>0</span><span>0</span></div>
+                        <div class="matrix-row"><span>2</span><span>3</span><span>0</span></div>
+                        <div class="matrix-row"><span>4</span><span>5</span><span>6</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+            </div>
+
+            <h5>4.10. Matriks Transpose</h5>
+            <p>Transpose dari suatu matriks A, dinotasikan dengan $A^T$ (atau $A'$), adalah matriks baru yang diperoleh dengan menukar posisi **baris menjadi kolom** dan **kolom menjadi baris** dari matriks asli.</p>
+            <p>Jika matriks A berordo `m x n`, maka $A^T$ akan berordo `n x m`.</p>
+            <div class="code-block">
+                Contoh:<br>
+                Jika A = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1</span><span>2</span><span>3</span></div>
+                        <div class="matrix-row"><span>4</span><span>5</span><span>6</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                maka $A^T$ = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1</span><span>4</span></div>
+                        <div class="matrix-row"><span>2</span><span>5</span></div>
+                        <div class="matrix-row"><span>3</span><span>6</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+            </div>
+            
+            <br>
+            <p class="center-align">Dengan memahami konsep dasar ini, Anda siap untuk mempelajari operasi matriks lebih lanjut!</p>
+
+            <div class="center-align" style="margin-top: 30px;">
+                <a href="index.html" class="waves-effect waves-light btn-large light-blue darken-3"><i class="material-icons left">arrow_back</i> Kembali ke Materi Matriks</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sidenav initialization scripts were already removed in the previous step
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akar-akar Suku Banyak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        // Konfigurasi MathJax untuk mengenali delimiter inline dan block
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+
+    <style>
+        .container {
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+        .chapter-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .card-panel h5 {
+            font-weight: 500;
+            margin-top: 0;
+        }
+        /* Style untuk membuat persamaan lebih menonjol */
+        .math-block {
+            padding: 15px;
+            margin: 15px 0;
+            background-color: #e3f2fd; /* Light Blue 1 */
+            border-left: 5px solid #2196F3;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        /* Style untuk pre agar font monospace dan tidak overflow */
+        pre {
+            white-space: pre-wrap; /* Memastikan teks di pre wrapping */
+            word-wrap: break-word; /* Memastikan kata yang panjang terpotong */
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="light-blue-text text-darken-4 chapter-title">Akar-akar Suku Banyak (Polinomial)</h2>
+
+        <p class="flow-text">
+            Materi ini adalah kelanjutan dari Teorema Sisa dan Teorema Faktor. Menentukan akar-akar suku banyak, terutama yang berderajat tinggi, adalah salah satu tujuan utama dalam mempelajari aljabar polinomial.
+        </p>
+
+        <div id="teorema" class="section scrollspy">
+            <div class="card-panel blue lighten-5">
+                <h5>1. Hubungan Akar dan Teorema Faktor</h5>
+                <p>
+                    Jika suku banyak $P(x)$ dibagi oleh $(x - k)$ dan sisanya adalah nol ($P(k) = 0$), maka $k$ disebut **akar** atau **nilai nol** dari suku banyak $P(x)$. Ini berarti $(x - k)$ adalah **faktor** dari $P(x)$.
+                </p>
+                <div class="math-block">
+                    Jika $P(k) = 0$, maka $k$ adalah akar dari $P(x)$, dan $P(x) = (x - k) \cdot H(x)$
+                </div>
+                <p>
+                    Di mana $H(x)$ adalah hasil bagi. Suku banyak $P(x)$ berderajat $n$ akan memiliki maksimal **$n$ akar** (nyata maupun kompleks).
+                </p>
+            </div>
+        </div>
+
+        <div id="rasional" class="section scrollspy">
+            <h4 class="light-blue-text text-darken-3">2. Menentukan Akar Rasional (Teorema Akar Rasional)</h4>
+            <p>
+                Teorema ini digunakan untuk mencari kemungkinan akar-akar berupa bilangan rasional dari suatu suku banyak. Misalkan diberikan suku banyak:
+            </p>
+            <div class="math-block">
+                $$P(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$$
+            </div>
+            <p>
+                Jika $\frac{p}{q}$ adalah akar rasional dari $P(x)$, di mana $p$ dan $q$ adalah bilangan bulat dan $q \ne 0$, maka berlaku:
+            </p>
+            <ul>
+                <li>$p$ adalah faktor dari suku tetap ($a_0$).</li>
+                <li>$q$ adalah faktor dari koefisien pangkat tertinggi ($a_n$).</li>
+            </ul>
+            <p>
+                Dengan menguji nilai-nilai $\frac{p}{q}$ menggunakan metode Horner, kita dapat menemukan akar-akar rasional yang sebenarnya.
+            </p>
+            <blockquote class="deep-orange lighten-5">
+                **Langkah Praktis:** Ujilah nilai $\pm 1$ terlebih dahulu, karena paling sering menjadi akar. Lanjutkan dengan faktor-faktor lain dari $a_0$.
+            </blockquote>
+        </div>
+        
+        <div id="vietta" class="section scrollspy">
+            <h4 class="light-blue-text text-darken-3">3. Sifat-sifat Akar (Rumus Vieta)</h4>
+            <p>
+                Rumus Vieta (Viète) menghubungkan antara **koefisien** suku banyak dengan **jumlah dan perkalian akar-akarnya**.
+            </p>
+            
+            <div class="card-panel grey lighten-4">
+                <h5>A. Suku Banyak Berderajat Tiga ($n=3$)</h5>
+                <p>
+                    Misalkan $P(x) = ax^3 + bx^2 + cx + d$, dengan akar-akar $x_1, x_2, x_3$.
+                </p>
+                <div class="math-block">
+                    * **Jumlah satu per satu:** $$x_1 + x_2 + x_3 = -\frac{b}{a}$$
+                    * **Jumlah perkalian dua-dua:** $$x_1 x_2 + x_1 x_3 + x_2 x_3 = \frac{c}{a}$$
+                    * **Perkalian tiga-tiga:** $$x_1 x_2 x_3 = -\frac{d}{a}$$
+                </div>
+            </div>
+
+            <div class="card-panel grey lighten-4">
+                <h5>B. Suku Banyak Berderajat Empat ($n=4$)</h5>
+                <p>
+                    Misalkan $P(x) = ax^4 + bx^3 + cx^2 + dx + e$, dengan akar-akar $x_1, x_2, x_3, x_4$.
+                </p>
+                <div class="math-block">
+                    * **Jumlah satu per satu:** $$x_1 + x_2 + x_3 + x_4 = -\frac{b}{a}$$
+                    * **Jumlah perkalian dua-dua:** $$x_1 x_2 + x_1 x_3 + x_1 x_4 + x_2 x_3 + x_2 x_4 + x_3 x_4 = \frac{c}{a}$$
+                    * **Jumlah perkalian tiga-tiga:** $$x_1 x_2 x_3 + x_1 x_2 x_4 + x_1 x_3 x_4 + x_2 x_3 x_4 = -\frac{d}{a}$$
+                    * **Perkalian empat-empat:** $$x_1 x_2 x_3 x_4 = \frac{e}{a}$$
+                </div>
+            </div>
+            
+            <p>
+                **Pola Umum Rumus Vieta:** Jika suku banyak berderajat $n$ adalah $a_n x^n + a_{n-1} x^{n-1} + \dots + a_0$, maka jumlah hasil kali $k$ akar secara bersamaan adalah:
+            </p>
+            <div class="math-block">
+                $$\sum_{1 \le i_1 < i_2 < \dots < i_k \le n} x_{i_1} x_{i_2} \dots x_{i_k} = (-1)^k \frac{a_{n-k}}{a_n}$$
+            </div>
+        </div>
+
+        <div id="contoh" class="section scrollspy">
+            <h4 class="light-blue-text text-darken-3">4. Contoh Soal Aplikasi</h4>
+
+            <div class="card-panel white">
+                <h6>**Contoh 1: Menentukan Akar-akar Rasional**</h6>
+                <p>Tentukan akar-akar dari $P(x) = x^3 - 4x^2 + x + 6 = 0$.</p>
+                <ol>
+                    <li>Koefisien utama ($a_n$) adalah 1, dan suku tetap ($a_0$) adalah 6.</li>
+                    <li>Faktor dari $a_0$ (6) adalah $\pm 1, \pm 2, \pm 3, \pm 6$.</li>
+                    <li>Uji $x = -1$ (metode Horner/substitusi):
+                        $$P(-1) = (-1)^3 - 4(-1)^2 + (-1) + 6 = -1 - 4 - 1 + 6 = 0$$
+                        Karena $P(-1) = 0$, maka **$x_1 = -1$** adalah akar, dan $(x+1)$ adalah faktor.
+                    </li>
+                    <li>Lakukan pembagian dengan $(x+1)$ menggunakan Horner:</li>
+                </ol>
+                <pre class="grey lighten-4" style="padding: 10px;">
+    | 1   -4   1    6
+-1  |   -1   5   -6
+    -----------------
+      1   -5   6    | 0  (Sisa)
+                </pre>
+                <p>Hasil baginya adalah $H(x) = x^2 - 5x + 6$.</p>
+                <ol start="5">
+                    <li>Faktorkan hasil bagi: $$x^2 - 5x + 6 = 0 \implies (x - 2)(x - 3) = 0$$</li>
+                    <li>Diperoleh akar lainnya: **$x_2 = 2$** dan **$x_3 = 3$**.</li>
+                </ol>
+                <p>Jadi, akar-akar suku banyak tersebut adalah $\{-1, 2, 3\}$.</p>
+            </div>
+
+            <div class="card-panel white">
+                <h6>**Contoh 2: Aplikasi Rumus Vieta**</h6>
+                <p>
+                    Jika $x_1, x_2, x_3$ adalah akar-akar dari $2x^3 - 3x^2 + 4x - 1 = 0$, tentukan nilai dari $x_1 + x_2 + x_3$ dan $x_1 x_2 x_3$.
+                </p>
+                <p>Dari suku banyak: $a=2, b=-3, c=4, d=-1$.</p>
+                <ol>
+                    <li>Jumlah Akar (Vieta Suku Tiga):
+                        $$x_1 + x_2 + x_3 = -\frac{b}{a} = -\frac{(-3)}{2} = \frac{3}{2}$$
+                    </li>
+                    <li>Perkalian Akar (Vieta Suku Tiga):
+                        $$x_1 x_2 x_3 = -\frac{d}{a} = -\frac{(-1)}{2} = \frac{1}{2}$$
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+        <p class="center-align" style="margin-top: 30px;">
+            <a href="index.html" class="waves-effect waves-light btn light-blue darken-3"><i class="material-icons left">home</i>Kembali ke Beranda</a>
+        </p>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hapus inisialisasi Sidenav (karena tidak ada sidenav lagi)
+            // var elemsSidenav = document.querySelectorAll('.sidenav');
+            // M.Sidenav.init(elemsSidenav);
+            var elemsScrollspy = document.querySelectorAll('.scrollspy');
+            M.ScrollSpy.init(elemsScrollspy, {
+                scrollOffset: 0
+            });
+        });
+    </script>
+</body>
+</html>

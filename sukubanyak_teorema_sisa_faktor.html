@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suku Banyak: Teorema Sisa & Faktor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> 
+
+<style>
+        /* CSS Tambahan Khusus Halaman */
+        .header-banner {
+            background-color: #00897B; /* Teal Darken 1 - Warna baru untuk tema Teorema */
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .content-section {
+            padding: 20px 0;
+        }
+        .code-block {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-left: 5px solid #00897B; /* Sesuai header */
+            margin-bottom: 20px;
+            overflow-x: auto;
+            border-radius: 8px;
+        }
+        .example-box {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #e0f2f1; /* Warna hijau sangat muda */
+        }
+        .example-box h6 {
+            font-weight: bold;
+            color: #004d40; /* Hijau tua */
+        }
+        .math-formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1em;
+            display: block;
+            margin: 15px 0;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="teal darken-4">
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo center">Teorema Sisa & Faktor</a>
+            <ul class="left">
+                <li><a href="index.html" class="tooltipped" data-position="right" data-tooltip="Kembali ke Beranda"><i class="material-icons">arrow_back</i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header-banner">
+        <div class="container">
+            <h3>Teorema Sisa dan Teorema Faktor</h3>
+            <p class="flow-text">Cara cepat menentukan sisa pembagian dan mencari faktor-faktor suku banyak.</p>
+        </div>
+    </div>
+
+    <div class="container content-section">
+
+        <h4>1. Konsep Dasar Pembagian</h4>
+        <p>Sebelum masuk ke teorema, ingatlah bahwa setiap pembagian suku banyak dapat dirumuskan sebagai:</p>
+        <div class="code-block">
+            <p class="math-formula">\( P(x) = Q(x) \cdot H(x) + S(x) \)</p>
+        </div>
+        <p>Di mana:</p>
+        <ul>
+            <li>\( P(x) \): Suku banyak yang dibagi.</li>
+            <li>\( Q(x) \): Pembagi.</li>
+            <li>\( H(x) \): Hasil bagi.</li>
+            <li>\( S(x) \): Sisa pembagian (derajat sisa selalu lebih kecil dari derajat pembagi).</li>
+        </ul>
+
+        <div class="divider"></div>
+        <br>
+
+        <h4>2. Teorema Sisa (Remainder Theorem)</h4>
+        <p>Teorema Sisa memungkinkan kita menemukan **sisa** pembagian suku banyak tanpa perlu melakukan pembagian bersusun atau skema Horner secara lengkap. Ini berfokus pada evaluasi nilai suku banyak \( P(k) \).</p>
+
+        <h5>A. Pembagi Berbentuk Linear \( (x - k) \)</h5>
+        <p>Jika suku banyak \( P(x) \) dibagi oleh \( (x - k) \), maka **sisa** pembagiannya adalah \( S = P(k) \).</p>
+        <div class="example-box">
+            <h6>Contoh 2.1: Sisa oleh \( (x - k) \)</h6>
+            <p>Tentukan sisa pembagian suku banyak \( P(x) = x^3 - 3x^2 + 4x - 1 \) oleh \( (x - 2) \).</p>
+            <p>Pembagi \( x - 2 \), maka \( k = 2 \). Sisa \( S = P(2) \).</p>
+            <p>\( S = P(2) = (2)^3 - 3(2)^2 + 4(2) - 1 \)</p>
+            <p>\( S = 8 - 3(4) + 8 - 1 \)</p>
+            <p>\( S = 8 - 12 + 8 - 1 \)</p>
+            <p>\( S = 3 \)</p>
+            <p>Jadi, sisa pembagiannya adalah **3**.</p>
+        </div>
+
+        <h5>B. Pembagi Berbentuk Linear \( (ax - b) \)</h5>
+        <p>Jika suku banyak \( P(x) \) dibagi oleh \( (ax - b) \), maka **sisa** pembagiannya adalah \( S = P(\frac{b}{a}) \).</p>
+        <div class="example-box">
+            <h6>Contoh 2.2: Sisa oleh \( (ax - b) \)</h6>
+            <p>Tentukan sisa pembagian suku banyak \( P(x) = 4x^3 + 2x^2 + 5x - 3 \) oleh \( (2x - 1) \).</p>
+            <p>Pembagi \( 2x - 1 \), maka \( x = \frac{1}{2} \). Sisa \( S = P(\frac{1}{2}) \).</p>
+            <p>\( S = P(\frac{1}{2}) = 4(\frac{1}{2})^3 + 2(\frac{1}{2})^2 + 5(\frac{1}{2}) - 3 \)</p>
+            <p>\( S = 4(\frac{1}{8}) + 2(\frac{1}{4}) + \frac{5}{2} - 3 \)</p>
+            <p>\( S = \frac{4}{8} + \frac{2}{4} + \frac{5}{2} - 3 \)</p>
+            <p>\( S = \frac{1}{2} + \frac{1}{2} + \frac{5}{2} - \frac{6}{2} \)</p>
+            <p>\( S = \frac{1 + 1 + 5 - 6}{2} = \frac{1}{2} \)</p>
+            <p>Jadi, sisa pembagiannya adalah **\( \frac{1}{2} \)**.</p>
+        </div>
+
+        <h5>C. Sisa Pembagian oleh Pembagi Berderajat Dua (Kuadrat)</h5>
+        <p>Jika suku banyak \( P(x) \) dibagi oleh pembagi kuadrat \( Q(x) = ax^2 + bx + c \) (yang dapat difaktorkan menjadi \( (x - k_1)(x - k_2) \)), maka **sisa** pembagiannya akan berbentuk linear, yaitu \( S(x) = px + q \).</p>
+        <p>Untuk mencari \( p \) dan \( q \), kita gunakan prinsip Teorema Sisa pada faktor-faktor pembagi:</p>
+        <div class="code-block">
+            <p class="math-formula">\( P(k_1) = p \cdot k_1 + q \)</p>
+            <p class="math-formula">\( P(k_2) = p \cdot k_2 + q \)</p>
+        </div>
+        <p>Dengan menyelesaikan sistem persamaan linear dua variabel (SPLDV) di atas, kita akan mendapatkan nilai \( p \) dan \( q \).</p>
+        <div class="example-box">
+            <h6>Contoh 2.3: Sisa oleh Pembagi Kuadrat</h6>
+            <p>Suku banyak \( P(x) \) dibagi \( (x - 1) \) bersisa 3, dan dibagi \( (x + 2) \) bersisa -6. Tentukan sisa pembagian \( P(x) \) oleh \( x^2 + x - 2 \).</p>
+            <ol>
+                <li>Faktorkan pembagi kuadrat: \( x^2 + x - 2 = (x - 1)(x + 2) \).</li>
+                <li>Faktor-faktornya adalah \( k_1 = 1 \) dan \( k_2 = -2 \).</li>
+                <li>Dari Teorema Sisa diketahui:
+                    <ul>
+                        <li>\( P(1) = 3 \) (Sisa oleh x - 1)</li>
+                        <li>\( P(-2) = -6 \) (Sisa oleh x + 2)</li>
+                    </ul>
+                </li>
+                <li>Asumsikan sisa \( S(x) = px + q \).
+                    <ul>
+                        <li>Untuk \( x = 1 \): \( P(1) = p(1) + q \implies \mathbf{3 = p + q} \) (Pers. 1)</li>
+                        <li>Untuk \( x = -2 \): \( P(-2) = p(-2) + q \implies \mathbf{-6 = -2p + q} \) (Pers. 2)</li>
+                    </ul>
+                </li>
+                <li>Eliminasi/Substitusi Pers. 1 dan 2:
+                    <div class="code-block">
+                        <pre>
+  p + q = 3
+-2p + q = -6
+------------- (-)
+3p      = 9
+  p     = 3
+                        </pre>
+                    </div>
+                </li>
+                <li>Substitusi \( p = 3 \) ke Pers. 1: \( 3 + q = 3 \implies q = 0 \).</li>
+            </ol>
+            <p>Jadi, sisa pembagiannya adalah \( S(x) = px + q = 3x + 0 \), atau **\( 3x \)**.</p>
+        </div>
+
+        <div class="divider"></div>
+        <br>
+
+        <h4>3. Teorema Faktor (Factor Theorem)</h4>
+        <p>Teorema Faktor adalah kasus khusus dari Teorema Sisa. Teorema ini digunakan untuk menentukan **faktor** dari suku banyak. Teorema ini menyatakan:</p>
+        <div class="code-block">
+            <p>Suatu pembagi linear \( (x - k) \) adalah **faktor** dari suku banyak \( P(x) \) jika dan hanya jika **sisa pembagiannya sama dengan nol**, yaitu \( S = P(k) = 0 \).</p>
+        </div>
+        <p>Jika \( P(k) = 0 \), maka \( x = k \) adalah **akar** dari suku banyak \( P(x) \).</p>
+
+        <h5>A. Mencari Faktor dan Akar Rasional</h5>
+        <p>Untuk mencari akar rasional (pecahan atau bulat) dari suku banyak berderajat tinggi, kita dapat mencoba-coba nilai \( k \) yang memenuhi \( P(k) = 0 \). Nilai \( k \) yang mungkin adalah pembagi-pembagi dari suku konstanta \( a_0 \) dibagi dengan pembagi-pembagi dari koefisien utama \( a_n \).</p>
+        <div class="code-block">
+            <p class="math-formula">Akar Rasional yang Mungkin \( (k) = \frac{\text{Faktor dari } a_0}{\text{Faktor dari } a_n} \)</p>
+        </div>
+        <div class="example-box">
+            <h6>Contoh 3.1: Mencari Faktor Suku Banyak</h6>
+            <p>Tentukan faktor-faktor dari \( P(x) = x^3 - 7x + 6 \).</p>
+            <ol>
+                <li>Koefisien utama \( a_n = 1 \), Konstanta \( a_0 = 6 \).</li>
+                <li>Faktor dari \( a_0=6 \) adalah: \( \pm 1, \pm 2, \pm 3, \pm 6 \).</li>
+                <li>Kita coba nilai-nilai tersebut dengan Teorema Sisa:
+                    <ul>
+                        <li>Coba \( x = 1 \): \( P(1) = (1)^3 - 7(1) + 6 = 1 - 7 + 6 = 0 \).
+                            <p>Karena \( P(1) = 0 \), maka **\( (x - 1) \) adalah faktor**.</p>
+                        </li>
+                        <li>Coba \( x = 2 \): \( P(2) = (2)^3 - 7(2) + 6 = 8 - 14 + 6 = 0 \).
+                            <p>Karena \( P(2) = 0 \), maka **\( (x - 2) \) adalah faktor**.</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>Setelah menemukan dua faktor, kita gunakan Horner atau pembagian bersusun untuk mencari faktor sisa:
+                    <div class="code-block">
+                        <pre>
+    1 | 1   0  -7   6  (Koefisien x³, x², x, konstanta)
+      |     1   1  -6
+      ----------------
+    2 | 1   1  -6   0
+      |     2   6
+      ----------------
+        1   3   0
+                        </pre>
+                    </div>
+                </li>
+                <li>Hasil bagi terakhir adalah \( x + 3 \). Maka, faktor terakhir adalah \( (x + 3) \).</li>
+            </ol>
+            <p>Jadi, faktor-faktor dari \( P(x) = x^3 - 7x + 6 \) adalah **\( (x - 1), (x - 2), \) dan \( (x + 3) \)**. Akar-akarnya adalah \( x=1, x=2, \) dan \( x=-3 \).</p>
+        </div>
+
+        <div class="center-align" style="margin-top: 40px;">
+            <a href="index.html#sukubanyak" class="waves-effect waves-light btn teal darken-3"><i class="material-icons left">chevron_left</i>Kembali ke Suku Banyak</a>
+        </div>
+
+    </div>
+
+    <footer class="page-footer teal darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Tentang Aplikasi</h5>
+                    <p class="grey-text text-lighten-4">Aplikasi ini dirancang untuk membantu siswa kelas XI dalam memahami konsep Suku Banyak dan Matriks.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Tautan Cepat</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html#home">Beranda</a></li>
+                        <li><a class="grey-text text-lighten-3" href="index.html#sukubanyak">Suku Banyak</a></li>
+                        <li><a class="grey-text text-lighten-3" href="index.html#matriks">Matriks</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+            © 2023 Pembelajaran Matematika XI
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inisialisasi Tooltip
+            var elemsTooltip = document.querySelectorAll('.tooltipped');
+            M.Tooltip.init(elemsTooltip);
+        });
+    </script>
+    
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>

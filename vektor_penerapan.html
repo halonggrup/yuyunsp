@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penerapan Vektor - Matlor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7f6; color: #333; }
+        .header-banner { background: linear-gradient(45deg, #2e7d32, #43a047); color: white; padding: 60px 0; text-align: center; margin-bottom: 30px; }
+        .card { border-radius: 15px; min-height: 450px; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-title { font-weight: bold !important; color: #1b5e20; }
+        .concept-tag { background: #e8f5e9; color: #2e7d32; padding: 4px 10px; border-radius: 4px; font-size: 0.9rem; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        .problem-box { background: #fffde7; border-left: 4px solid #fbc02d; padding: 12px; margin: 10px 0; font-size: 0.9rem; }
+        .solution-box { background: #f1f8ff; border-left: 4px solid #2196f3; padding: 12px; font-family: 'Courier New', monospace; font-size: 0.9rem; }
+        footer { margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+<nav class="green darken-4">
+    <div class="nav-wrapper container">
+        <a href="index.html" class="brand-logo center">Vektor Penerapan</a>
+            <ul class="left">
+                <li><a href="index.html" class="tooltipped" data-position="right" data-tooltip="Kembali ke Beranda"><i class="material-icons">arrow_back</i></a></li>
+            </ul>
+    </div>
+</nav>
+
+<div class="header-banner">
+    <div class="container">
+        <h1>Studi Kasus Vektor</h1>
+        <p class="flow-text">Analisis Permasalahan Nyata Menggunakan Konsep Vektor</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="concept-tag">NAVIGASI</span>
+                    <span class="card-title">Analisis Angin Samping</span>
+                    <p>Sebuah pesawat terbang ke arah Utara dengan kecepatan 200 km/jam. Tiba-tiba ada angin kencang dari arah Barat ke Timur dengan kecepatan 50 km/jam.</p>
+                    <div class="problem-box">
+                        <b>Permasalahan:</b> Berapakah kecepatan total (resultan) pesawat dan ke arah mana pesawat akan cenderung bergerak?
+                    </div>
+                    
+                    <details>
+                        <summary class="blue-text"><b>Lihat Solusi</b></summary>
+                        <div class="solution-box">
+                            v_total = &radic;(200&sup2; + 50&sup2;)<br>
+                            v_total = &radic;(40.000 + 2.500)<br>
+                            v_total = &radic;42.500 &asymp; 206,1 km/jam<br>
+                            Arah: Timur Laut (North-East).
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="concept-tag">KESETIMBANGAN</span>
+                    <span class="card-title">Analisis Beban Lampu</span>
+                    <p>Sebuah lampu jalan digantung menggunakan dua kabel yang membentuk sudut yang sama. Berat lampu adalah 100 Newton ke arah bawah.</p>
+                    <div class="problem-box">
+                        <b>Permasalahan:</b> Berapakah resultan gaya yang harus dihasilkan oleh kedua kabel ke atas agar lampu tetap diam (statis)?
+                    </div>
+                    
+                    <details>
+                        <summary class="blue-text"><b>Lihat Solusi</b></summary>
+                        <div class="solution-box">
+                            Agar diam: &Sigma;Fy = 0<br>
+                            Gaya_Kabel_Atas - Berat_Lampu = 0<br>
+                            Gaya_Kabel_Atas = 100 N<br>
+                            Kedua kabel harus berbagi beban 100 N ke arah atas.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="concept-tag">GAME LOGIC</span>
+                    <span class="card-title">Pergerakan Karakter</span>
+                    <p>Dalam game 2D, seorang karakter berada di titik (2, 3). Pemain menekan tombol jalan yang memberikan vektor perpindahan sebesar (5, -2).</p>
+                    <div class="problem-box">
+                        <b>Permasalahan:</b> Di titik koordinat manakah karakter tersebut sekarang berada?
+                    </div>
+                    <details>
+                        <summary class="blue-text"><b>Lihat Solusi</b></summary>
+                        <div class="solution-box">
+                            Posisi_Akhir = Posisi_Awal + Vektor_Jalan<br>
+                            P_akhir = (2 + 5)i + (3 + (-2))j<br>
+                            P_akhir = (7, 1)<br>
+                            Karakter berada di koordinat (7, 1).
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="concept-tag">USAHA & DOT PRODUCT</span>
+                    <span class="card-title">Analisis Tembakan Bola</span>
+                    <p>Seseorang memukul bola billiard dengan gaya F = 10 N sejauh s = 0,5 meter. Namun, gaya tersebut miring 60&deg; dari arah lintasan bola.</p>
+                    <div class="problem-box">
+                        <b>Permasalahan:</b> Berapakah usaha (W) yang efektif masuk ke bola? (W = F &middot; s &middot; cos &theta;)
+                    </div>
+                    
+                    <details>
+                        <summary class="blue-text"><b>Lihat Solusi</b></summary>
+                        <div class="solution-box">
+                            W = 10 * 0,5 * cos(60&deg;)<br>
+                            W = 5 * 0,5<br>
+                            W = 2,5 Joule<br>
+                            Hanya 2,5 Joule gaya yang membuat bola maju.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+		<h4 class="blue-text text-darken-4"><br>Analisis Vektor: Hero Fanny (MLBB)</h4>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="concept-tag">PENJUMLAHAN VEKTOR</span>
+                    <span class="card-title">Kabel Ganda (Dual Cable)</span>
+                    <p>Fanny mengeluarkan dua kabel secara bersamaan. Kabel pertama menariknya ke arah <b>V1 = 4i</b> (Timur) dan kabel kedua menariknya ke arah <b>V2 = 3j</b> (Utara).</p>
+                    <div class="problem-box">
+                        <b>Permasalahan:</b> Ke arah mana Fanny akan meluncur dan berapakah besar kecepatan resultannya?
+                    </div>
+                    
+                    <details>
+                        <summary class="blue-text"><b>Lihat Analisis Pro Player</b></summary>
+                        <div class="solution-box">
+                            Vektor Resultan (Vr) = V1 + V2 = 4i + 3j<br><br>
+                            Besar Kecepatan:<br>
+                            |Vr| = &radic;(4&sup2; + 3&sup2;)<br>
+                            |Vr| = &radic;(16 + 9) = &radic;25 = 5 satuan.<br><br>
+                            <b>Kesimpulan:</b> Fanny meluncur secara diagonal ke arah Timur Laut dengan besar kecepatan 5.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="concept-tag">BESAR VEKTOR</span>
+                    <span class="card-title">Jarak Maksimum Kabel</span>
+                    <p>Fanny berada di titik (0,0). Dia ingin melemparkan kabel ke arah dinding yang berada di koordinat (12, 5) untuk melakukan <i>wall honk</i>.</p>
+                    <div class="problem-box">
+                        <b>Permasalahan:</b> Berapakah panjang kabel (besar vektor posisi) yang harus dikeluarkan Fanny agar sampai ke dinding tersebut?
+                    </div>
+                    
+                    <details>
+                        <summary class="blue-text"><b>Lihat Analisis Pro Player</b></summary>
+                        <div class="solution-box">
+                            Vektor posisi dinding (d) = 12i + 5j<br><br>
+                            Panjang Kabel (|d|):<br>
+                            |d| = &radic;(12&sup2; + 5&sup2;)<br>
+                            |d| = &radic;(144 + 25) = &radic;169 = 13 satuan.<br><br>
+                            <b>Kesimpulan:</b> Panjang kabel minimal yang dibutuhkan adalah 13 satuan jarak.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<footer class="page-footer green darken-4">
+    <div class="container center-align" style="padding-bottom: 20px;">
+        © 2026 MATLOR - Matematika Berbasis Kasus
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

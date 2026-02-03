@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATLOR - Operasi Matriks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom styles for this page (optional, can be moved to style.css) */
+        .content-section {
+            padding: 40px 0;
+        }
+        .content-section h4 {
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #263238; /* Dark grey */
+        }
+        .content-section h5 {
+            font-weight: 500;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #37474F; /* Slightly lighter dark grey */
+            border-bottom: 1px solid #CFD8DC;
+            padding-bottom: 5px;
+        }
+        .content-section p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #424242;
+        }
+        .content-section ul li {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 8px;
+            line-height: 1.6;
+            color: #424242;
+        }
+        .code-block {
+            background-color: #ECEFF1; /* Light grey blue */
+            padding: 15px;
+            border-left: 4px solid #FFC107; /* Amber accent */
+            margin: 20px 0;
+            overflow-x: auto; /* For long matrix examples */
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+        }
+        /* Style untuk menampilkan matriks */
+        .matrix-example {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 1.2em;
+            margin: 0 5px;
+        }
+        .matrix-brackets {
+            font-size: 2em; /* Larger brackets */
+            vertical-align: middle;
+        }
+        .matrix-content {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .matrix-row span {
+            display: inline-block;
+            width: 30px; /* Adjust as needed */
+            text-align: center;
+        }
+        .matrix-content p {
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+        .math-symbol {
+            font-size: 1.8em;
+            vertical-align: middle;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <div class="content-section">
+            <h3 class="center-align section-title">Operasi Matriks</h3>
+            <p class="flow-text center-align grey-text text-darken-1">Pelajari berbagai operasi dasar pada matriks: penjumlahan, pengurangan, perkalian skalar, dan perkalian antar matriks.</p>
+            
+            <div class="divider"></div>
+
+            <h4>1. Penjumlahan Matriks</h4>
+            <p>Dua matriks dapat dijumlahkan jika dan hanya jika keduanya memiliki **ordo yang sama**. Artinya, jumlah baris dan jumlah kolom pada kedua matriks haruslah identik. Proses penjumlahannya dilakukan dengan menjumlahkan elemen-elemen yang berada pada posisi yang bersesuaian.</p>
+            <p>Jika $A = [a_{ij}]$ dan $B = [b_{ij}]$ adalah dua matriks berordo $m \times n$, maka hasil penjumlahan $A + B$ adalah matriks $C = [c_{ij}]$ berordo $m \times n$, di mana $c_{ij} = a_{ij} + b_{ij}$.</p>
+
+            <h5>Contoh 1.1: Penjumlahan Matriks 2x2</h5>
+            <p>Diberikan matriks A dan B:</p>
+            <div class="code-block">
+                A = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1</span><span>2</span></div>
+                        <div class="matrix-row"><span>3</span><span>4</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                dan B = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>5</span><span>6</span></div>
+                        <div class="matrix-row"><span>7</span><span>8</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                <br>
+                Hitung A + B.
+                <br><br>
+                **Penyelesaian:**<br>
+                A + B = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1+5</span><span>2+6</span></div>
+                        <div class="matrix-row"><span>3+7</span><span>4+8</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>6</span><span>8</span></div>
+                        <div class="matrix-row"><span>10</span><span>12</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+            </div>
+
+            <h5>Contoh 1.2: Penjumlahan Matriks 2x3</h5>
+            <p>Diberikan matriks P dan Q:</p>
+            <div class="code-block">
+                P = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>-1</span><span>0</span><span>3</span></div>
+                        <div class="matrix-row"><span>2</span><span>-4</span><span>5</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                dan Q = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>4</span><span>1</span><span>-2</span></div>
+                        <div class="matrix-row"><span>0</span><span>3</span><span>-1</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                <br>
+                Hitung P + Q.
+                <br><br>
+                **Penyelesaian:**<br>
+                P + Q = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>-1+4</span><span>0+1</span><span>3+(-2)</span></div>
+                        <div class="matrix-row"><span>2+0</span><span>-4+3</span><span>5+(-1)</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>3</span><span>1</span><span>1</span></div>
+                        <div class="matrix-row"><span>2</span><span>-1</span><span>4</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+            </div>
+            
+            <hr>
+
+            <h4>2. Pengurangan Matriks</h4>
+            <p>Serupa dengan penjumlahan, dua matriks dapat dikurangkan jika dan hanya jika keduanya memiliki **ordo yang sama**. Pengurangan dilakukan dengan mengurangkan elemen-elemen yang berada pada posisi yang bersesuaian.</p>
+            <p>Jika $A = [a_{ij}]$ dan $B = [b_{ij}]$ adalah dua matriks berordo $m \times n$, maka hasil pengurangan $A - B$ adalah matriks $C = [c_{ij}]$ berordo $m \times n$, di mana $c_{ij} = a_{ij} - b_{ij}$.</p>
+
+            <h5>Contoh 2.1: Pengurangan Matriks 2x2</h5>
+            <p>Diberikan matriks A dan B (sama seperti contoh penjumlahan):</p>
+            <div class="code-block">
+                A = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1</span><span>2</span></div>
+                        <div class="matrix-row"><span>3</span><span>4</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                dan B = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>5</span><span>6</span></div>
+                        <div class="matrix-row"><span>7</span><span>8</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                <br>
+                Hitung A - B.
+                <br><br>
+                **Penyelesaian:**<br>
+                A - B = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1-5</span><span>2-6</span></div>
+                        <div class="matrix-row"><span>3-7</span><span>4-8</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>-4</span><span>-4</span></div>
+                        <div class="matrix-row"><span>-4</span><span>-4</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+            </div>
+
+            <h5>Contoh 2.2: Pengurangan Matriks 3x2</h5>
+            <p>Diberikan matriks K dan L:</p>
+            <div class="code-block">
+                K = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>7</span><span>1</span></div>
+                        <div class="matrix-row"><span>0</span><span>-3</span></div>
+                        <div class="matrix-row"><span>-2</span><span>5</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                dan L = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>3</span><span>-4</span></div>
+                        <div class="matrix-row"><span>-1</span><span>2</span></div>
+                        <div class="matrix-row"><span>6</span><span>0</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                <br>
+                Hitung K - L.
+                <br><br>
+                **Penyelesaian:**<br>
+                K - L = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>7-3</span><span>1-(-4)</span></div>
+                        <div class="matrix-row"><span>0-(-1)</span><span>-3-2</span></div>
+                        <div class="matrix-row"><span>-2-6</span><span>5-0</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>4</span><span>5</span></div>
+                        <div class="matrix-row"><span>1</span><span>-5</span></div>
+                        <div class="matrix-row"><span>-8</span><span>5</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+            </div>
+            
+            <hr>
+
+            <h4>3. Perkalian Matriks dengan Skalar</h4>
+            <p>Perkalian matriks dengan skalar (suatu bilangan tunggal) adalah operasi di mana **setiap elemen** dalam matriks dikalikan dengan skalar tersebut. Ordo matriks **tidak berubah** setelah operasi ini.</p>
+            <p>Jika $A = [a_{ij}]$ adalah matriks berordo $m \times n$ dan $k$ adalah suatu skalar, maka hasil perkalian $kA$ adalah matriks baru berordo $m \times n$ di mana setiap elemennya adalah $k \cdot a_{ij}$.</p>
+
+            <h5>Contoh 3.1: Perkalian Skalar dengan Matriks 2x2</h5>
+            <p>Diberikan matriks X dan skalar 3:</p>
+            <div class="code-block">
+                X = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>2</span><span>-1</span></div>
+                        <div class="matrix-row"><span>0</span><span>4</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                <br>
+                Hitung 3X.
+                <br><br>
+                **Penyelesaian:**<br>
+                3X = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>3*2</span><span>3*(-1)</span></div>
+                        <div class="matrix-row"><span>3*0</span><span>3*4</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>6</span><span>-3</span></div>
+                        <div class="matrix-row"><span>0</span><span>12</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+            </div>
+
+            <h5>Contoh 3.2: Perkalian Skalar dengan Matriks 1x3</h5>
+            <p>Diberikan matriks Y dan skalar -2:</p>
+            <div class="code-block">
+                Y = [ 4  -5  1 ]
+                <br>
+                Hitung -2Y.
+                <br><br>
+                **Penyelesaian:**<br>
+                -2Y = [ (-2)*4  (-2)*(-5)  (-2)*1 ]
+                <br>
+                -2Y = [ -8  10  -2 ]
+            </div>
+            
+            <hr>
+
+            <h4>4. Perkalian Antar Matriks</h4>
+            <p>Perkalian antar matriks ($A \times B$) adalah operasi yang lebih kompleks dan memiliki syarat khusus:</p>
+            <ul>
+                <li>Dua matriks A ($m \times \mathbf{p}$) dan B ($\mathbf{p} \times n$) dapat dikalikan (A x B) jika dan hanya jika **jumlah kolom matriks pertama (A) sama dengan jumlah baris matriks kedua (B)**.</li>
+                <li>Jika matriks A berordo $m \times p$ dan matriks B berordo $p \times n$, maka hasil perkalian $C = A \times B$ akan menjadi matriks berordo $m \times n$.</li>
+                <li>Elemen $c_{ij}$ diperoleh dengan menjumlahkan hasil perkalian setiap elemen pada **baris ke-$i$ dari matriks A** dengan setiap elemen pada **kolom ke-$j$ dari matriks B** yang bersesuaian.</li>
+            </ul>
+
+            <h5>Contoh 4.1: Perkalian Matriks (2x2 dengan 2x2)</h5>
+            <p>Diberikan matriks A dan B:</p>
+            <div class="code-block">
+                A = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1</span><span>2</span></div>
+                        <div class="matrix-row"><span>3</span><span>4</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                dan B = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>5</span><span>6</span></div>
+                        <div class="matrix-row"><span>7</span><span>8</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                <br>
+                Hitung A x B.
+                <br><br>
+                **Penyelesaian:**<br>
+                (Baris 1 A x Kolom 1 B) = (1*5) + (2*7) = 5 + 14 = 19<br>
+                (Baris 1 A x Kolom 2 B) = (1*6) + (2*8) = 6 + 16 = 22<br>
+                (Baris 2 A x Kolom 1 B) = (3*5) + (4*7) = 15 + 28 = 43<br>
+                (Baris 2 A x Kolom 2 B) = (3*6) + (4*8) = 18 + 32 = 50<br><br>
+
+                A x B = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>19</span><span>22</span></div>
+                        <div class="matrix-row"><span>43</span><span>50</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+            </div>
+
+            <h5>Contoh 4.2: Perkalian Matriks (2x3 dengan 3x2)</h5>
+            <p>Diberikan matriks P dan Q:</p>
+            <div class="code-block">
+                P = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>1</span><span>0</span><span>2</span></div>
+                        <div class="matrix-row"><span>-1</span><span>3</span><span>1</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                (Ordo 2x3) dan Q = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>-1</span><span>0</span></div>
+                        <div class="matrix-row"><span>2</span><span>1</span></div>
+                        <div class="matrix-row"><span>3</span><span>-2</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+                (Ordo 3x2)
+                <br>
+                Hitung P x Q. (Hasil akan berordo 2x2)
+                <br><br>
+                **Penyelesaian:**<br>
+                c_11 = (1*-1) + (0*2) + (2*3) = -1 + 0 + 6 = 5<br>
+                c_12 = (1*0) + (0*1) + (2*-2) = 0 + 0 - 4 = -4<br>
+                c_21 = (-1*-1) + (3*2) + (1*3) = 1 + 6 + 3 = 10<br>
+                c_22 = (-1*0) + (3*1) + (1*-2) = 0 + 3 - 2 = 1<br><br>
+
+                P x Q = 
+                <div class="matrix-example">
+                    <span class="matrix-brackets">[</span>
+                    <div class="matrix-content">
+                        <div class="matrix-row"><span>5</span><span>-4</span></div>
+                        <div class="matrix-row"><span>10</span><span>1</span></div>
+                    </div>
+                    <span class="matrix-brackets">]</span>
+                </div>
+            </div>
+
+            <br>
+            <p class="center-align">Dengan menguasai operasi-operasi ini, Anda akan memiliki fondasi yang kuat untuk memecahkan masalah yang melibatkan matriks!</p>
+
+            <div class="center-align" style="margin-top: 30px;">
+                <a href="index.html" class="waves-effect waves-light btn-large light-blue darken-3"><i class="material-icons left">arrow_back</i> Kembali ke Materi Matriks</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        // Inisialisasi Sidenav sudah tidak diperlukan karena Sidenav telah dihapus.
+    </script>
+</body>
+</html>

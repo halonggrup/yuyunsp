@@ -1,0 +1,520 @@
+/* ==================================== */
+/* MATLOR - Custom Stylesheet           */
+/* ==================================== */
+
+/* --- 1. General & Layout --- */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #f8f9fa; /* Light grey background for the whole page */
+    color: #333; /* Default text color */
+    font-family: "Roboto", sans-serif; /* Example font */
+    line-height: 1.6;
+}
+
+main {
+    flex: 1 0 auto; /* Main content takes up available space */
+}
+
+.container {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.section-title {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #0D47A1;
+    position: relative;
+    padding-bottom: 10px;
+    text-align: center; /* Pastikan judul selalu di tengah */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background-color: #2196F3;
+    border-radius: 2px;
+}
+
+
+/* --- 2. Header & Navigation --- */
+nav.light-blue.darken-4 {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+.brand-logo {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.sidenav li > a {
+    color: #1976D2;
+    font-weight: 500;
+}
+.sidenav .subheader {
+    color: #42A5F5;
+}
+
+
+/* --- 3. Hero Section --- */
+.hero-section {
+    background: linear-gradient(45deg, #2196F3 0%, #0D47A1 100%);
+    padding: 80px 0;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.hero-section h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+.hero-section .btn-large {
+    background-color: #8BC34A !important;
+    color: #212121 !important;
+    font-weight: 600;
+    padding: 0 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+.hero-section .btn-large:hover {
+    background-color: #9CCC65 !important;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
+}
+.hero-section .btn-large i.material-icons {
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+
+/* --- 4. Materi Cards --- */
+.card-material {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+.card-material:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.card-material .card-image {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.card-material .card-image .material-icons.large {
+    font-size: 6.5rem;
+    opacity: 0.8;
+}
+.card-material .card-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5px; /* JARAK DIPENDEKKAN */
+    color: #333;
+}
+.card-material .card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    background-color: white;
+}
+.card-material .card-content p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+.card-material .card-action {
+    border-top: 1px solid #eee;
+    padding: 18px;
+    text-align: center;
+    background-color: #fefefe;
+}
+.card-material .card-action a.btn-small {
+    width: 90%;
+    max-width: 220px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+/* Warna Latar Belakang untuk Card Image (Tiap Kategori) */
+.card-sukubanyak-1 .card-image { background-color: #4CAF50; }
+.card-sukubanyak-2 .card-image { background-color: #FFC107; }
+.card-sukubanyak-3 .card-image { background-color: #2196F3; }
+.card-matriks-1 .card-image { background-color: #9C27B0; }
+.card-matriks-2 .card-image { background-color: #00BCD4; }
+.card-matriks-3 .card-image { background-color: #FF5722; }
+
+
+/* --- 5. Quiz Cards --- */
+.quiz-card {
+    background-color: #E8F5E9;
+    color: #1A237E;
+    border-left: 6px solid #4CAF50;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.quiz-card .card-content {
+    padding-bottom: 20px;
+}
+.quiz-card .card-title {
+    font-weight: 700;
+    color: #1B5E20;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+.quiz-card .card-content p {
+    color: #424242;
+    font-size: 0.95rem;
+}
+.quiz-card .card-action {
+    border-top: none;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+.quiz-card .card-action .btn {
+    width: 90%;
+    max-width: 250px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.quiz-card .card-action .btn.green.darken-1:hover {
+    background-color: #388E3C !important;
+    transform: translateY(-2px);
+}
+.quiz-card .card-action .btn.deep-purple.darken-1:hover {
+    background-color: #512DA8 !important;
+    transform: translateY(-2px);
+}
+
+
+/* --- 6. Footer --- */
+.page-footer {
+    margin-top: 60px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+.page-footer .container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.page-footer h5 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.page-footer p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+.page-footer ul li a {
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+    padding: 5px 0;
+    display: block;
+}
+.page-footer ul li a:hover {
+    color: white !important;
+}
+.footer-copyright {
+    background-color: rgba(0,0,0,0.1);
+    padding: 15px 0;
+    font-size: 0.85rem;
+}
+
+
+/* --- 7. Modals --- */
+.modal h4 {
+    font-weight: 600;
+    color: #1976D2;
+}
+.modal p {
+    line-height: 1.7;
+    color: #555;
+}
+.modal .modal-footer {
+    background-color: #f8f8f8;
+    border-top: 1px solid #eee;
+}
+
+
+/* =============================================================== */
+/* --- 8. Responsive Adjustments (Mobile - max-width: 600px) --- */
+/* =============================================================== */
+@media screen and (max-width: 600px) {
+    /* Hero Section */
+    .hero-section { padding: 60px 0; }
+    .hero-section h1 { font-size: 2.8rem; }
+    .hero-section p { font-size: 1rem; }
+    .hero-section .btn-large {
+        font-size: 1rem; height: 48px; line-height: 48px; width: 80%;
+    }
+
+    /* Section Titles */
+    .section-title {
+        font-size: 2rem; margin-top: 30px; margin-bottom: 20px;
+    }
+    .section-title::after { width: 60px; }
+
+
+    /* !!! FORCE 3 COLUMNS FOR MATERI CARDS ON MOBILE !!! */
+    /* This is an aggressive override. Content will be extremely small. */
+    /* Use a very specific selector and flexbox properties to force layout. */
+
+    /* Ensure the row acts as a flex container */
+    .container .row {
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap */
+        margin-left: -0.15rem; /* Counteract inner padding of cols */
+        margin-right: -0.15rem; /* Counteract inner padding of cols */
+    }
+
+    /* Target specific Materialize columns within our sections */
+    #sukubanyak .col.s12,
+    #matriks .col.s12 {
+        flex: 0 0 33.33333% !important; /* Force 33.33% width */
+        max-width: 33.33333% !important; /* Ensure it doesn't grow past this */
+        box-sizing: border-box !important; /* Crucial for width calculation */
+        padding: 0 0.15rem !important; /* Extremely tight padding */
+        margin-bottom: 0.5rem !important; /* Reduced margin */
+    }
+
+    /* Adjust content within materi cards for 3-column mobile layout */
+    .card-material {
+        border-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card-material .card-image {
+        height: 70px !important;
+    }
+    .card-material .card-image .material-icons.large {
+        font-size: 2.5rem !important;
+    }
+    .card-material .card-title {
+        font-size: 0.75rem !important;
+        margin-bottom: 0px !important; /* JARAK DIPENDEKKAN UNTUK MOBILE */
+        padding-top: 2px !important;
+    }
+    .card-material .card-content {
+        padding: 5px !important;
+        min-height: 60px; /* Ensure some height for content */
+    }
+    .card-material .card-content p {
+        font-size: 0.5rem !important; /* EXTREMELY SMALL DESCRIPTION */
+        line-height: 1.1 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.1rem; /* Adjust height based on line-height and line-clamp */
+    }
+    .card-material .card-action {
+        padding: 5px !important;
+    }
+    .card-material .card-action a.btn-small {
+        font-size: 0.55rem !important;
+        height: 20px !important;
+        line-height: 20px !important;
+        width: 98% !important;
+        padding: 0 5px !important;
+    }
+
+
+    /* Quiz Cards on Mobile (Force 1 column for better readability) */
+    #latihan .col.s12 { /* Specific targeting for quiz section */
+        flex: 0 0 100% !important; /* Force 100% width */
+        max-width: 100% !important;
+        padding: 0 0.75rem !important; /* Standard padding */
+        margin-bottom: 1rem !important;
+    }
+    .quiz-card {
+        margin-bottom: 15px; height: auto;
+    }
+    .quiz-card .card-title { font-size: 1.4rem; }
+    .quiz-card .card-action .btn { width: 90%; }
+
+    /* Footer in Mobile */
+    .page-footer { margin-top: 40px; padding-top: 20px; }
+    .page-footer h5 { font-size: 1.6rem; margin-bottom: 10px; }
+    .page-footer p, .page-footer ul li a { font-size: 0.8rem; }
+}
+
+
+/* ================================================================= */
+/* --- 9. Responsive Adjustments (Tablet - min-width: 601px and max-width: 992px) --- */
+/* ================================================================= */
+@media screen and (min-width: 601px) and (max-width: 992px) {
+    /* Hero Section */
+    .hero-section h1 { font-size: 3.2rem; }
+    .hero-section p { font-size: 1.15rem; }
+
+    /* Section Titles */
+    .section-title { font-size: 2.5rem; }
+
+    /* Materi & Quiz Cards - 2 columns on tablet */
+    /* Using flexbox properties to override Materialize's default 'm6' */
+    #sukubanyak .col.m6,
+    #matriks .col.m6,
+    #latihan .col.m6 {
+        flex: 0 0 50% !important; /* Force 50% width */
+        max-width: 50% !important; /* Ensure it doesn't grow past this */
+        box-sizing: border-box !important;
+        padding: 0 0.75rem !important;
+    }
+
+    .card-material .card-image { height: 140px; }
+    .card-material .card-image .material-icons.large { font-size: 5.5rem; }
+    .card-material .card-title { font-size: 1.4rem; }
+    .card-material .card-content p { font-size: 0.85rem; }
+    .card-material .card-action a.btn-small {
+        width: 85%; max-width: 180px; font-size: 0.8rem;
+    }
+
+    /* Quiz Cards */
+    .quiz-card .card-title { font-size: 1.6rem; }
+}
+/* --- 5.1. Game Cards (New) --- */
+.game-card {
+    /* ... semua properti game-card di sini ... */
+}
+.game-card:hover {
+    /* ... */
+}
+/* ... properti dan warna spesifik .game-card.blue.lighten-5 dan .game-card.red.lighten-5 ... */
+/* ... responsive adjustments untuk .game-card ... */
+
+/* --- 4.1. Materi Vektor Cards --- */
+.card-vektor-1 .card-image { background-color: #3F51B5; } /* Vektor Dasar - Indigo */
+.card-vektor-2 .card-image { background-color: #009688; } /* Operasi Vektor - Teal */
+.card-vektor-3 .card-image { background-color: #FF9800; } /* Penerapan Vektor - Orange */
+
+/* Pastikan semua card-vektor memiliki gaya card-material yang sama */
+.card-vektor-1, .card-vektor-2, .card-vektor-3 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+.card-vektor-1:hover, .card-vektor-2:hover, .card-vektor-3:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.card-vektor-1 .card-image .material-icons.large,
+.card-vektor-2 .card-image .material-icons.large,
+.card-vektor-3 .card-image .material-icons.large {
+    font-size: 6.5rem;
+    opacity: 0.8;
+}
+
+/* Responsif: Mobile (ikuti pola materi lain) */
+@media screen and (max-width: 600px) {
+    .card-vektor-1, .card-vektor-2, .card-vektor-3 {
+        border-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card-vektor-1 .card-image, 
+    .card-vektor-2 .card-image, 
+    .card-vektor-3 .card-image {
+        height: 70px !important;
+    }
+    .card-vektor-1 .card-image .material-icons.large,
+    .card-vektor-2 .card-image .material-icons.large,
+    .card-vektor-3 .card-image .material-icons.large {
+        font-size: 2.5rem !important;
+    }
+    .card-vektor-1 .card-title, 
+    .card-vektor-2 .card-title,
+    .card-vektor-3 .card-title {
+        font-size: 0.75rem !important;
+        margin-bottom: 0px !important;
+        padding-top: 2px !important;
+    }
+    .card-vektor-1 .card-content p, 
+    .card-vektor-2 .card-content p,
+    .card-vektor-3 .card-content p {
+        font-size: 0.5rem !important;
+        line-height: 1.1 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.1rem;
+    }
+    .card-vektor-1 .card-action a.btn-small,
+    .card-vektor-2 .card-action a.btn-small,
+    .card-vektor-3 .card-action a.btn-small {
+        font-size: 0.55rem !important;
+        height: 20px !important;
+        line-height: 20px !important;
+        width: 98% !important;
+        padding: 0 5px !important;
+    }
+}
+
+/* Responsif: Tablet */
+@media screen and (min-width: 601px) and (max-width: 992px) {
+    .card-vektor-1, .card-vektor-2, .card-vektor-3 {
+        margin-bottom: 15px;
+    }
+    .card-vektor-1 .card-image .material-icons.large,
+    .card-vektor-2 .card-image .material-icons.large,
+    .card-vektor-3 .card-image .material-icons.large {
+        font-size: 5.5rem;
+    }
+    .card-vektor-1 .card-content p, 
+    .card-vektor-2 .card-content p,
+    .card-vektor-3 .card-content p {
+        font-size: 0.85rem;
+    }
+}
